@@ -60,11 +60,11 @@ def button(screen, position, text):
     text_render = font.render(text, 1, (255, 255, 255))
     x, y, w , h = text_render.get_rect()
     x, y = position
-    pygame.draw.line(screen, (200, 200, 255), (x, y), (x + w , y), 5)
-    pygame.draw.line(screen, (200, 200, 255), (x, y - 2), (x, y + h), 5)
-    pygame.draw.line(screen, (50, 50, 125), (x, y + h), (x + w , y + h), 5)
-    pygame.draw.line(screen, (50, 50, 125), (x + w , y+h), [x + w , y], 5)
-    pygame.draw.rect(screen, (70, 149, 214), (x, y, w , h))
+    pygame.draw.line(screen, (203, 000, 000), (x, y), (x + w , y), 5)
+    pygame.draw.line(screen, (203, 000, 000), (x, y - 2), (x, y + h), 5)
+    pygame.draw.line(screen, (139, 11, 11), (x, y + h), (x + w , y + h), 5)
+    pygame.draw.line(screen, (139, 11, 11), (x + w , y+h), [x + w , y], 5)
+    pygame.draw.rect(screen, (139, 11, 11), (x, y, w , h))
     return screen.blit(text_render, (x, y))
 
 def character(): #allows user to select charcater
@@ -81,7 +81,7 @@ def character(): #allows user to select charcater
 
 
     #creates buttons for characters
-    b1 = button(SCREEN, (50,200), "Papa Smurf")
+    b1 = button(SCREEN, (50,200), "Red Car")
     SCREEN.blit(PapaSmurfIcon, (175,175))
     b2 = button(SCREEN, (50,275), "Smurfette")
     SCREEN.blit(SmurfetteIcon, (175,250))
