@@ -25,6 +25,19 @@ BACKGROUNDc = pygame.image.load('gallery/sprites/background.png').convert_alpha(
 LOGOc=pygame.image.load('gallery/sprites/logo.png').convert_alpha()
 BASEc=pygame.image.load('gallery/sprites/base.png').convert_alpha()
 
+
+def button(screen, position, text):
+    font = pygame.font.SysFont("Arial", 20)
+    text_render = font.render(text, 1, (255, 255, 255))
+    x, y, w , h = text_render.get_rect()
+    x, y = position
+    pygame.draw.line(screen, (203, 000, 000), (x, y), (x + w , y), 5)
+    pygame.draw.line(screen, (203, 000, 000), (x, y - 2), (x, y + h), 5)
+    pygame.draw.line(screen, (139, 11, 11), (x, y + h), (x + w , y + h), 5)
+    pygame.draw.line(screen, (139, 11, 11), (x + w , y+h), [x + w , y], 5)
+    pygame.draw.rect(screen, (139, 11, 11), (x, y, w , h))
+    return screen.blit(text_render, (x, y))
+
 def welcomeScreen():
     """
     Shows welcome images on the screen
@@ -42,28 +55,24 @@ def welcomeScreen():
                 pygame.quit()
                 sys.exit()  # if user clicks on cross button, close the game
 
+            # if backbutton.collidepoint(pygame.mouse.get_pos()):
+            #     PLAYER='gallery/sprites/papa smurf.png'
+            #     GAME_SOUNDS['song'] = pygame.mixer.Sound('gallery/audio/CarSong.mp3')
+            #     GAME_SOUNDS['song'].play()
+            #     return PLAYER
+            #     go=True
+            #     return PLAYER
+
             elif event.type==KEYDOWN and (event.key==K_SPACE or event.key == K_UP):
                 return # if  user presses space or up key, start the game for them
             else:
                 SCREEN.blit(GAME_SPRITES['background'],(0, 0))    
                 SCREEN.blit(GAME_SPRITES['player'], (playerx, playery))    
                 SCREEN.blit(GAME_SPRITES['message'], (messagex,messagey ))    
-                SCREEN.blit(GAME_SPRITES['base'], (basex, GROUNDY))    
+                SCREEN.blit(GAME_SPRITES['base'], (basex, GROUNDY))   
+                # backbutton= button(SCREEN, (200,200), "Back")
                 pygame.display.update() #if user presses nothing, images are blited onto screen
                 FPSCLOCK.tick(FPS)  
-
-
-def button(screen, position, text):
-    font = pygame.font.SysFont("Arial", 20)
-    text_render = font.render(text, 1, (255, 255, 255))
-    x, y, w , h = text_render.get_rect()
-    x, y = position
-    pygame.draw.line(screen, (203, 000, 000), (x, y), (x + w , y), 5)
-    pygame.draw.line(screen, (203, 000, 000), (x, y - 2), (x, y + h), 5)
-    pygame.draw.line(screen, (139, 11, 11), (x, y + h), (x + w , y + h), 5)
-    pygame.draw.line(screen, (139, 11, 11), (x + w , y+h), [x + w , y], 5)
-    pygame.draw.rect(screen, (139, 11, 11), (x, y, w , h))
-    return screen.blit(text_render, (x, y))
 
 def character(): #allows user to select charcater
     
