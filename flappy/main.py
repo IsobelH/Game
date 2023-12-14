@@ -83,7 +83,7 @@ def character(): #allows user to select charcater
     SCREEN.blit(PapaSmurfIcon, (175,175))
     b2 = button(SCREEN, (50,275), "Santa")
     SCREEN.blit(SmurfetteIcon, (175,250))
-    b3 = button(SCREEN, (50,350), "Gargamel")
+    b3 = button(SCREEN, (50,350), "Grinch")
     SCREEN.blit(GargamelIcon, (175,325))
     pygame.display.update()
     FPSCLOCK.tick(FPS)
