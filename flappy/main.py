@@ -81,7 +81,7 @@ def character(): #allows user to select charcater
     #creates buttons for characters
     b1 = button(SCREEN, (50,200), "Red Car")
     SCREEN.blit(PapaSmurfIcon, (175,175))
-    b2 = button(SCREEN, (50,275), "Smurfette")
+    b2 = button(SCREEN, (50,275), "Santa")
     SCREEN.blit(SmurfetteIcon, (175,250))
     b3 = button(SCREEN, (50,350), "Gargamel")
     SCREEN.blit(GargamelIcon, (175,325))
