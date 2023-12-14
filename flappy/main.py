@@ -97,15 +97,21 @@ def character(): #allows user to select charcater
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if b1.collidepoint(pygame.mouse.get_pos()):
                     PLAYER='gallery/sprites/papa smurf.png'
+                    GAME_SOUNDS['song'] = pygame.mixer.Sound('gallery/audio/CarSong.mp3')
+                    GAME_SOUNDS['song'].play()
                     return PLAYER
                     go=True
                     return PLAYER
                 elif b2.collidepoint(pygame.mouse.get_pos()):
                     PLAYER='gallery/sprites/smurfette.png'
+                    GAME_SOUNDS['song'] = pygame.mixer.Sound('gallery/audio/SantaSong.mp3')
+                    GAME_SOUNDS['song'].play()
                     go=True
                     return PLAYER
                 elif b3.collidepoint(pygame.mouse.get_pos()):
                     PLAYER='gallery/sprites/gargamel.png'
+                    GAME_SOUNDS['song'] = pygame.mixer.Sound('gallery/audio/GrinchSong.mp3')
+                    GAME_SOUNDS['song'].play()
                     go=True
                     return PLAYER
 
@@ -267,7 +273,7 @@ if __name__ == "__main__":
     pygame.init() #initialise all pygame's modules
     FPSCLOCK = pygame.time.Clock()
 
-    pygame.display.set_caption('Flappy Smurf by Juliana, Katie, and Isobel')
+    pygame.display.set_caption('Flappy Smurf by Jack and Isobel')
     PLAYER=character()
 
 
@@ -296,7 +302,8 @@ if __name__ == "__main__":
     GAME_SOUNDS['point'] = pygame.mixer.Sound('gallery/audio/point.wav')
     GAME_SOUNDS['swoosh'] = pygame.mixer.Sound('gallery/audio/swoosh.wav')
     GAME_SOUNDS['wing'] = pygame.mixer.Sound('gallery/audio/wing.wav')
-    GAME_SOUNDS['song'] = pygame.mixer.Sound('gallery/audio/SmurfSong.mp3')
+    # GAME_SOUNDS['song'] = pygame.mixer.Sound('gallery/audio/SmurfSong.mp3')
+    GAME_SOUNDS['song'] = pygame.mixer.Sound('gallery/audio/GrinchSong.mp3')
 
     #gmae sprites
     GAME_SPRITES['background'] = pygame.image.load(BACKGROUND).convert()
@@ -306,7 +313,7 @@ if __name__ == "__main__":
     while True: 
  
 
-        GAME_SOUNDS['song'].play()
+        # GAME_SOUNDS['song'].play()
         welcomeScreen() # Shows welcome screen to the  user until he presses a button
         HIGHSCORE=mainGame(HIGHSCORE) # This is the main game function 
 
