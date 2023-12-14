@@ -19,8 +19,6 @@ characters = ['gallery/sprites/papa smurf.png', 'gallery/sprites/smurfette.png',
 PLAYER = pygame.image.load(characters[playerNumber])
 BACKGROUND = 'gallery/sprites/background.png'
 PIPE = 'gallery/sprites/pipe1.png'
-smurfberry = pygame.image.load('gallery/sprites/smurfberries.png')
-smurfberries = []
 
 EXPLOSTION=pygame.image.load('gallery/sprites/explosion.png').convert_alpha()
 BACKGROUNDc = pygame.image.load('gallery/sprites/background.png').convert_alpha()
