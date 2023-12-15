@@ -4,12 +4,15 @@ import pygame # makes all the available pygame modules available
 from pygame.locals import * # Basic pygame imports
 pygame.init()
 
+from dbconnector import database
+db = database()
 
 # Global Variables for the game
 FPS = 32
 SCREENWIDTH = 289
 SCREENHEIGHT = 511
-HIGHSCORE=int(0)
+findfrom=db.queryDB("SELECT highscore FROM highscores WHERE id = ?", [1])
+HIGHSCORE=findfrom[0][0]
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 GROUNDY = SCREENHEIGHT * 0.8
 GAME_SPRITES = {}
@@ -126,6 +129,7 @@ def character(): #allows user to select charcater
 
 def hightscore(score):
     print("New highscore")
+    db.updateDB("UPDATE highscores SET highscore = ? WHERE id = ?", [int(score), 1])
     HIGHSCORE=int(score)
     return HIGHSCORE
 
