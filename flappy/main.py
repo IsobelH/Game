@@ -286,7 +286,7 @@ if __name__ == "__main__":
     pygame.init() #initialise all pygame's modules
     FPSCLOCK = pygame.time.Clock()
 
-    pygame.display.set_caption('Flappy Smurf by Jack and Isobel')
+    pygame.display.set_caption('Driving Home For Christmas by Jack and Isobel')
     PLAYER=character()
 
 
